@@ -6,7 +6,6 @@ describe('Secret santa main page', () => {
     })
   
     it('Page title display', () => {
-     // cy.get('.body mobile grid-md').should('have.text', 'Вход и регистрация')
       cy.contains('тайный санта').should('be.visible')
     })
   })
