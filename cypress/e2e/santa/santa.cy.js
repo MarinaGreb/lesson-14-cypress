@@ -2,7 +2,7 @@
 
 describe('Secret santa main page', () => {
     beforeEach(() => {
-      cy.visit('https://staging.lpitko.ru/')
+      cy.visit()
     })
   
     it('Page title display', () => {
