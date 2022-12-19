@@ -7,7 +7,10 @@
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:run:staging:dashboard": "npx cypress run --config-file cypress.config.js --record --key 5c27aabb-68aa-4e4b-aefe-ed5ec6f755c8",
-    "cy:run:prod:dashboard": "npx cypress run --config-file cypress.config-2.js --record --key 5c27aabb-68aa-4e4b-aefe-ed5ec6f755c8"
+    "cy:run:prod:dashboard": "npx cypress run --config-file cypress.config-2.js --record --key 5c27aabb-68aa-4e4b-aefe-ed5ec6f755c8",
+    "cy:run:1spec:chrome": "npx cypress run --spec 'cypress/e2e/santa/santa.cy.js' --browser chrome",
+    "cy:run:2spec:electron": "npx cypress run --spec 'cypress/e2e/santa/santa_spec2.cy.js' --browser electron",
+    "cy:run:twoInRow": "npm run cy:run:1spec:chrome && npm run cy:run:2spec:electron"
   },
   "author": "GMarina",
   "license": "ISC",
