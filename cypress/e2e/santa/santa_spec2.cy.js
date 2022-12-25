@@ -1,3 +1,10 @@
+before(() => {
+  cy.log('"Before" hook out of describe');
+});
+beforeEach(() => {
+  cy.log('"BeforeEach" hook out of describe');
+});
+
 describe("Checking links on the user page after login", () => {
   const username = Cypress.env("login");
   const password = Cypress.env("password");
