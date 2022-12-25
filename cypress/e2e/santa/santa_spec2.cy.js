@@ -13,27 +13,22 @@ describe("Checking links on the user page after login", () => {
 
   it("new box", () => {
     cy.visit("/box/new");
-    cy.url().should("include", "/box/new");
+    cy.urlCheck("/box/new")
     cy.get('[class="frm-wrapper"] div').should("have.length", 2);
   });
   it("view boxes", () => {
     cy.visit("/account/boxes");
-    cy.url().should("include", "/account/boxes");
-    cy.get(
-      '[class="base--clickable toggle-menu-item toggle-menu-item--active"]'
-    ).should("have.text", "Мои Коробки");
+    cy.urlCheck("/account/boxes")
+   cy.haveTextCheck('[class="base--clickable toggle-menu-item toggle-menu-item--active"]', "Мои Коробки")
   });
   it("randomizer", () => {
     cy.visit("/randomizer");
-    cy.url().should("include", "/randomizer");
+    cy.urlCheck("/randomizer")
     cy.get('[class="switch__toggle"]').should("be.visible");
   });
   it("account", () => {
     cy.visit("/account");
-    cy.url().should("include", "/account");
-    cy.get('[class="txt--med txt txt--orange"]').should(
-      "have.text",
-      " Выйти с сайта"
-    );
+    cy.urlCheck("/account")
+    cy.haveTextCheck('[class="txt--med txt txt--orange"]', " Выйти с сайта");
   });
 });

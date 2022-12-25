@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("urlCheck", (assert) => {
+  // cy.get(selector).type(`${text}{enter}`);
+  cy.url().should("include", assert);
+});
+
+Cypress.Commands.add("haveTextCheck", (selector, text) => {
+  cy.get(selector).should("have.text", text);
+});
