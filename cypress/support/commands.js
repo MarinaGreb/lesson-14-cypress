@@ -32,3 +32,10 @@ Cypress.Commands.add("urlCheck", (assert) => {
 Cypress.Commands.add("haveTextCheck", (selector, text) => {
   cy.get(selector).should("have.text", text);
 });
+
+
+Cypress.Commands.add("dataInputForRegistration", (name, email, nameSelector, emailSelector, mainBtnSelector) => {
+  cy.get(nameSelector).type(name);
+  cy.get(emailSelector).type(email);
+  cy.get(mainBtnSelector).click();
+});
